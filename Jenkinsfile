@@ -14,7 +14,7 @@ stages{
  
     stage('Run Test'){
 
-        steps{sh "docker-compose -f test-suites.yaml up"
+        steps{sh "docker-compose test-suites.yaml up"
         }
 
     }
@@ -27,8 +27,8 @@ post{
 always{
     sh "docker-compose -f grid.yaml down"
         sh "docker-compose -f test-suites.yaml down"
-    always{archiveArtifacts artifacts: 'index.html', followSymlinks: false}
-
+  always{archiveArtifacts artifacts: 'output/flight-reservation/emailable-report.html', followSymlinks: false}
+                        always{archiveArtifacts artifacts: 'output/vendor-portal/emailable-report.html', followSymlinks: false}
 
 }
         
