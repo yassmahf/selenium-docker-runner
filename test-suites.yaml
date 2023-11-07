@@ -1,7 +1,7 @@
 version: "3"
 services:
   vendor-portal:
-    image: yassmahf/selenium:latest
+    image: yassmahf98/selenium:latest
     environment:
       - BROWSER=chrome
       - HUB_HOST=hub
@@ -11,7 +11,7 @@ services:
       - ./output/vendor-portal:/home/selenium-docker/test-output
 
   flight-reservation:
-    image: yassmahf/selenium:latest
+    image: yassmahf98/selenium:latest
     environment:
       - BROWSER=firefox
       - HUB_HOST=hub
