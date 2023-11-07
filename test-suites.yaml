@@ -1,26 +1,5 @@
 version: "3"
 services:
-  hub:
-    image: selenium/hub:4.10
-
-  chrome:
-    image: selenium/node-chrome:4.10
-    shm_size: "2g"
-    depends_on:
-      - hub
-    deploy:
-      replicas: 1
-    env_file: .env
-
-  firefox:
-    image: selenium/node-firefox:4.10
-    shm_size: "2g"
-    depends_on:
-      - hub
-    deploy:
-      replicas: 1
-    env_file: .env
-
   vendor-portal:
     image: yassmahf98/selenium
     environment:
@@ -30,8 +9,7 @@ services:
       - TEST_SUITE=vendor-portal.xml
     volumes:
       - ./output/vendor-portal:/home/selenium-docker/test-output
-    depends_on:
-      - chrome
+
   flight-reservation:
     image: yassmahf98/selenium
     environment:
@@ -41,5 +19,3 @@ services:
       - TEST_SUITE=flight-reservation.xml
     volumes:
       - ./output/flight-reservation:/home/selenium-docker/test-output
-    depends_on:
-      - firefox
