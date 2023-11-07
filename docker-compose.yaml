@@ -2,12 +2,7 @@ version: "3"
 
 services:
   hub: 
-    image: selenium/hub:4.10
-    ports: 
-   
-    
-  
-
+    image: selenium/hub:4.10   
   chrome:
     image: selenium/node-chrome:4.10
     shm_size: '2g'
