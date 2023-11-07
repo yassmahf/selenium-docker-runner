@@ -1,0 +1,3 @@
+there is a problem when using yassmahf98/selenium image in test-suites.yaml . 
+The Tests are not running and no test output is generated.
+When replacing it with the other image yassmahf/selenium, it works
