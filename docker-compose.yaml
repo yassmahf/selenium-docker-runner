@@ -36,7 +36,6 @@ services:
    image: yassmahf98/selenium:latest
    depends_on:
    - firefox
-
    environment:
    - BROWSER=firefox
    - HUB_HOST=hub
@@ -49,7 +48,6 @@ services:
    image: yassmahf98/selenium:latest
    depends_on:
    - chrome
-
    environment:
    - BROWSER=chrome
    - HUB_HOST=hub
