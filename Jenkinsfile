@@ -27,6 +27,7 @@ post{
 always{
     sh "docker-compose -f grid.yaml down"
         sh "docker-compose -f test-suites.yaml down"
+    always{archiveArtifacts artifacts: 'index.html', followSymlinks: false}
 
 
 }
