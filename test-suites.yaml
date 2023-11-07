@@ -7,7 +7,6 @@ vendor-portal :
    - TEST_SUITE=vendor-portal.xml
    volumes:
    - ./output/vendor-portal:/home/selenium-docker/test-output
-   
   flight-reservation :
    image: yassmahf98/selenium:latest
    environment:
