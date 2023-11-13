@@ -1,5 +1,4 @@
 version: "3"
-
 services:
   hub:
     image: selenium/hub:4.10
@@ -11,7 +10,6 @@ services:
     deploy:
       replicas: 1
     env_file: .env
-
   firefox:
     image: selenium/node-firefox:4.10
     shm_size: "2g"
