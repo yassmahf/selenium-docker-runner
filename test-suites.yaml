@@ -3,8 +3,8 @@ services:
   vendor-portal:
     image: yassmahf98/selenium:latest
     environment:
-      - BROWSER=chrome
       - HUB_HOST=hub
+      - BROWSER
       - THREAD_COUNT=3
       - TEST_SUITE=vendor-portal.xml
     volumes:
@@ -12,8 +12,8 @@ services:
   flight-reservation:
     image: yassmahf98/selenium:latest
     environment:
-      - BROWSER=firefox
       - HUB_HOST=hub
+      - BROWSER
       - THREAD_COUNT=4
       - TEST_SUITE=flight-reservation.xml
     volumes:
