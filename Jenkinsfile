@@ -14,7 +14,7 @@ pipeline{
 
         stage('Run Test vendor-portal'){
             steps{
-                sh "TEST_SUITE=vendor-portal docker-compose -f test-suites.yaml up --pull=always"
+                sh "TEST_SUITE=vendor-portal.xml docker-compose -f test-suites.yaml up --pull=always"
                 script{
                     if(fileExists('output/flight-reservation/testng-failed.xml')||
                     fileExists('output/vendor-portal/testng-failed.xml')){
@@ -25,7 +25,18 @@ pipeline{
             }
         }
 
-        
+    stage('Run Test flight-reservation'){
+            steps{
+                sh "TEST_SUITE=flight-reservation.xml docker-compose -f test-suites.yaml up --pull=always"
+                script{
+                    if(fileExists('output/flight-reservation/testng-failed.xml')||
+                    fileExists('output/vendor-portal/testng-failed.xml')){
+                        error('failed tests found')
+                    }
+
+                }
+            }
+        }
 
 
 
