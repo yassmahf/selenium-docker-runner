@@ -12,9 +12,9 @@ pipeline{
             }
         }
 
-        stage('Run Test'){
+        stage('Run Test vendor-portal'){
             steps{
-                sh "docker-compose -f test-suites.yaml up --pull=always"
+                sh "docker-compose -f test-suites.yaml TEST-SUITE=vendor-portal up --pull=always"
                 script{
                     if(fileExists('output/flight-reservation/testng-failed.xml')||
                     fileExists('output/vendor-portal/testng-failed.xml')){
@@ -24,6 +24,8 @@ pipeline{
                 }
             }
         }
+
+        
 
 
 
