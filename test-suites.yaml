@@ -8,4 +8,4 @@ services:
       - THREAD_COUNT=1
       - TEST_SUITE
     volumes:
-      - ./output/vendor-portal:/home/selenium-docker/test-output
+      - ./output:/home/selenium-docker/test-output
