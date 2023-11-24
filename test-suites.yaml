@@ -7,5 +7,6 @@ services:
       - BROWSER
       - THREAD_COUNT=1
       - TEST_SUITE
+      - TEST_OUTPUT
     volumes:
-      - ./output:/home/selenium-docker/test-output
+      - ./output/TEST_OUTPUT:/home/selenium-docker/test-output
